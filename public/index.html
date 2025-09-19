@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoChat Chatbot - AI Climate Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EcoChat</h1>
+        <p>Your AI-powered climate assistant. Ask me anything about recycling, renewable energy, carbon footprint and climate action!</p>
+    </header>
+
+    <div class="container">
+        <div class="chat-interface">
+            <div id="chatbox">
+                <div class="message bot-message welcome-message">
+                    <div class="avatar bot-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>
+                                Hello! I'm EcoChat, your AI climate assistant! 🌱 I'm here to help you learn about:
+                                <br><br>
+                                • ♻️ Recycling and waste reduction
+                                <br>• 🔋 Clean and renewable energy
+                                <br>• 🌡️ Climate change science
+                                <br>• 🏠 Sustainable living tips
+                                <br>• 🚗 Carbon footprint reduction
+                                <br><br>
+                                What would you like to know about today?
+                            </p>
+                        </div>
+                        <div class="timestamp"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+            <form action="/send" id="chatForm" class="chat-form" method="post">
+                <section class="input-container">
+                    <input type="text" id="userInput" name="message" placeholder="Ask me about climate, recycling, or clean energy..." aria-label="Type your climate question here" autocomplete="off" required>
+                    <button type="submit" class="send-button">
+                        <span>Send</span>
+                    </button>
+                
+                </section>
+                <section class="suggestions">
+                    <div class="suggestion-chip" onclick="fillSuggestion('How can I reduce my carbon footprint?')">Carbon footprint</div>
+                    <div class="suggestion-chip" onclick="fillSuggestion('What are the best renewable energy sources?')">Renewable energy</div>
+                    <div class="suggestion-chip" onclick="fillSuggestion('How to recycle plastic properly?')">Recycling tips</div>
+                    <div class="suggestion-chip" onclick="fillSuggestion('Climate change effects on oceans')">Ocean impact</div>
+                </section>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-stats">
+                <div class="stat">
+                    <div class="stat-number" id="questionsAnswered">0</div>
+                    <div class="stat-label">Questions Answered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Renewable Powered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
+            <p>🌱 Powered by AI & Climate Science | Together for a sustainable future</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
